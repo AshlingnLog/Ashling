@@ -169,6 +169,60 @@
     line-height: 1.7;
   }
 
+  /* ---------- Agency feature ---------- */
+  .agency-feature {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 38px;
+  }
+  .agency-reel {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #09161b;
+  }
+  .agency-reel iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .agency-copy { padding: 28px; }
+  .agency-copy h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(24px, 3.5vw, 32px);
+    line-height: 1.2;
+    margin: 8px 0 10px;
+  }
+  .agency-copy > p { margin: 0; color: var(--muted); max-width: 46em; }
+  .work-types {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--primary);
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+  }
+  .client-roster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .client-roster span {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.35;
+    color: var(--ink);
+    background: var(--ground);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 11px;
+  }
+
   /* ---------- Creative list ---------- */
   .creative { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 40px; }
   .creative-item { padding: 20px 0; border-top: 1px solid var(--line); }
@@ -330,7 +384,49 @@
 <section id="creative">
   <div class="wrap">
     <div class="sec-head"><h2>Creative work</h2><div class="rule"></div></div>
-    <p class="sec-intro">The other half of the job: making three service brands sound like themselves.</p>
+    <p class="sec-intro">The other half of the job: shaping ideas into work people can see, understand, and act on.</p>
+    <article class="agency-feature">
+      <div class="agency-reel">
+        <iframe
+          title="rabble+rouser agency reel"
+          src="https://player.vimeo.com/video/288808122?h=f7a7e7479f"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="agency-copy">
+        <span class="tag">Agency work · 2013–2016</span>
+        <h3>rabble+rouser</h3>
+        <p>Production coordination, quality assurance, office and studio operations, creative and developer project management, and app and website testing. I helped move ambitious creative work from idea to delivery—on schedule, on brief, and checked twice before it shipped.</p>
+        <div class="work-types">WEBSITES · APPS · COOKBOOKS · TV ADVERTISING · DIGITAL · PRINT · SOCIAL · EVENTS</div>
+        <div class="client-roster" aria-label="Brands and organizations supported at rabble+rouser">
+          <span>Weber Grills</span>
+          <span>Omaha Steaks</span>
+          <span>Atkins Nutritionals</span>
+          <span>Blue Moon</span>
+          <span>Farm Credit</span>
+          <span>FCC Services</span>
+          <span>Mortgage Cadence</span>
+          <span>Health Links</span>
+          <span>Futrix Health</span>
+          <span>Healthspek</span>
+          <span>Colorado Health Institute</span>
+          <span>LiveWell Colorado</span>
+          <span>National Multiple Sclerosis Society</span>
+          <span>Immunize For Good</span>
+          <span>Keystat Marketing</span>
+          <span>Access Fund</span>
+          <span>Save The Dome</span>
+          <span>Metro Crisis Services</span>
+          <span>Denver's Road Home</span>
+          <span>New Code Denver</span>
+          <span>Regional Air Quality Council</span>
+          <span>Electric Ride Colorado</span>
+          <span>Colorado Department of Public Health &amp; Environment</span>
+        </div>
+      </div>
+    </article>
     <div class="creative">
       <div class="creative-item">
         <b>Three brands, three voices</b>
@@ -343,10 +439,6 @@
       <div class="creative-item">
         <b>Campaigns from idea to follow-through</b>
         <p>Leadership ideas and market opportunities turned into executable campaigns — message and creative materials built together with the tracking and follow-up behind them.</p>
-      </div>
-      <div class="creative-item">
-        <b>The agency years: Weber &amp; Denver's Road Home</b>
-        <p>Production coordination and quality assurance at rabble+rouser on work for clients including Weber and Denver's Road Home — national-brand standards and civic-campaign stakes, early in my career.</p>
       </div>
       <div class="creative-item">
         <b>Bespoke Brand Solutions</b>
