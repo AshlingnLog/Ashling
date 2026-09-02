@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ashling Struve — creative marketing operations. Brand storytelling, campaign execution, CRM administration, automation, and the reporting systems that prove it worked.">
+<title>Ashling Struve</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #F4F6F5;
+    --surface: #FDFEFD;
+    --ink: #16303B;
+    --muted: #5E7178;
+    --line: #D8E0DF;
+    --primary: #14555E;
+    --primary-soft: #E3ECEB;
+    --accent: #D98A20;
+    --accent-ink: #9A5F0E;
+    --display: "Fraunces", Georgia, serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "Spline Sans Mono", "SFMono-Regular", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0E1F26;
+      --surface: #142932;
+      --ink: #E9EFEE;
+      --muted: #93A7AC;
+      --line: #24404A;
+      --primary: #6FB4B0;
+      --primary-soft: #1A333D;
+      --accent: #E8A13D;
+      --accent-ink: #EFB868;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0E1F26;
+    --surface: #142932;
+    --ink: #E9EFEE;
+    --muted: #93A7AC;
+    --line: #24404A;
+    --primary: #6FB4B0;
+    --primary-soft: #1A333D;
+    --accent: #E8A13D;
+    --accent-ink: #EFB868;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: .35;
+    mask-image: radial-gradient(ellipse 80% 90% at 85% 10%, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 90% at 85% 10%, black 0%, transparent 65%);
+  }
+  .hero-inner { position: relative; }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0 0 20px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(44px, 7vw, 76px);
+    line-height: 1.02;
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  h1 .spark { color: var(--accent); }
+  .thesis {
+    font-size: clamp(19px, 2.4vw, 23px);
+    line-height: 1.5;
+    max-width: 34em;
+    margin: 0 0 32px;
+    color: var(--muted);
+  }
+  .thesis strong { color: var(--ink); font-weight: 600; }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 12px 28px;
+    font-family: var(--mono); font-size: 14px;
+    align-items: center;
+  }
+  .hero-meta a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+  .hero-meta a:hover, .hero-meta a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+  .hero-meta span { color: var(--muted); }
+
+  /* ---------- Arc strip ---------- */
+  .arc {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 48px 0 0;
+  }
+  .arc > div { background: var(--surface); padding: 22px 22px 20px; }
+  .arc b {
+    display: block;
+    font-family: var(--display); font-weight: 600; font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .arc p { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .arc .num { font-family: var(--mono); font-size: 12px; color: var(--accent-ink); letter-spacing: .12em; display:block; margin-bottom: 10px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 64px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 8px; }
+  h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+  .sec-intro { color: var(--muted); max-width: 42em; margin: 10px 0 36px; }
+
+  /* ---------- Case studies ---------- */
+  .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .case {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 26px 26px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .case.wide { grid-column: 1 / -1; }
+  .tag {
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .case h3 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 22px; line-height: 1.25; margin: 0;
+    text-wrap: balance;
+  }
+  .case p { margin: 0; font-size: 15.5px; color: var(--muted); }
+  .built a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+  .built a:hover, .built a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+  .case .built {
+    margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--line);
+    font-family: var(--mono); font-size: 12.5px; color: var(--primary);
+    line-height: 1.7;
+  }
+
+  /* ---------- Creative list ---------- */
+  .creative { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 40px; }
+  .creative-item { padding: 20px 0; border-top: 1px solid var(--line); }
+  .creative-item .tag { display: block; margin-bottom: 6px; }
+  .creative-item b { font-family: var(--display); font-weight: 600; font-size: 18px; display: block; margin-bottom: 4px; }
+  .creative-item p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  /* ---------- Toolbox ---------- */
+  .toolbox { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; align-items: stretch; }
+  .mit {
+    background: var(--primary-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 28px;
+  }
+  .mit .tag { color: var(--primary); }
+  .mit h3 { font-family: var(--display); font-size: 24px; font-weight: 600; margin: 10px 0 10px; }
+  .mit p { margin: 0; font-size: 15.5px; color: var(--muted); }
+  .stack {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 28px;
+  }
+  .stack ul { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .stack li {
+    font-family: var(--mono); font-size: 13px;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 5px 12px; color: var(--ink); background: var(--ground);
+  }
+
+  /* ---------- About ---------- */
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+  .about-story p { margin: 0 0 16px; max-width: 38em; }
+  .also {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 20px;
+    align-self: start;
+  }
+  .also .tag { color: var(--accent-ink); }
+  .also ul { list-style: none; margin: 10px 0 0; padding: 0; }
+  .also li { padding: 5px 0; font-size: 15px; color: var(--muted); }
+
+  /* ---------- Footer / contact ---------- */
+  footer {
+    margin-top: 72px;
+    border-top: 1px solid var(--line);
+    padding: 48px 0 64px;
+  }
+  footer .big {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(26px, 4vw, 36px);
+    margin: 0 0 18px; letter-spacing: -0.01em;
+  }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 14px; }
+  .contact-row a {
+    font-family: var(--mono); font-size: 14px;
+    text-decoration: none;
+    color: var(--primary);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 10px 18px;
+    background: var(--surface);
+    transition: border-color .15s ease;
+  }
+  .contact-row a:hover, .contact-row a:focus-visible { border-color: var(--accent); outline: none; }
+  footer .fine { margin-top: 28px; font-size: 13px; color: var(--muted); font-family: var(--mono); }
+  footer .fine a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+  footer .fine a:hover, footer .fine a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+
+  @media (max-width: 720px) {
+    .cases, .creative, .toolbox, .about { grid-template-columns: 1fr; }
+    .arc { grid-template-columns: 1fr; }
+    section { padding: 48px 0 8px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-inner > * { animation: rise .6s ease both; }
+    .hero-inner > *:nth-child(2) { animation-delay: .08s; }
+    .hero-inner > *:nth-child(3) { animation-delay: .16s; }
+    .hero-inner > *:nth-child(4) { animation-delay: .24s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <p class="kicker">Creative Marketing Operations · Lake Bluff, IL</p>
+    <h1>Ashling Struve builds the structure behind growth<span class="spark">.</span></h1>
+    <p class="thesis"><strong>Develop the idea. Build the campaign. Prove it worked.</strong> I run marketing as a department of one across three service brands — combining brand storytelling and campaign execution with the CRM administration, automation, and reporting systems that turn a marketing push into measurable pipeline.</p>
+    <div class="hero-meta">
+      <a href="mailto:ashlingstruve85@gmail.com">ashlingstruve85@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ashlings" target="_blank" rel="noopener">linkedin.com/in/ashlings</a>
+      <a href="/portfolio">Portfolio &amp; artifacts</a>
+      <span>Resume available on request</span>
+    </div>
+    <div class="arc">
+      <div>
+        <span class="num">CREATIVE</span>
+        <b>Develop the idea</b>
+        <p>Brand voice, messaging, and campaign concepts that translate technical services into stories customers actually respond to.</p>
+      </div>
+      <div>
+        <span class="num">EXECUTION</span>
+        <b>Build the campaign</b>
+        <p>Multi-channel content across social, email, web, and sales enablement — each brand keeping its own distinct voice.</p>
+      </div>
+      <div>
+        <span class="num">SYSTEMS</span>
+        <b>Prove it worked</b>
+        <p>Dashboards, automation, and CRM data quality that show leadership exactly what's driving pipeline — and what isn't.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><h2>Selected work</h2><div class="rule"></div></div>
+    <p class="sec-intro">Case studies from running marketing for United Services by Permaco — a family-owned restoration company operating three brands: United Services, 1-800-BoardUp Chicagoland, and Dr. Energy Saver NE Illinois.</p>
+    <div class="cases">
+      <div class="case wide">
+        <span class="tag">Analytics</span>
+        <h3>Multi-brand marketing intelligence dashboards</h3>
+        <p>Leadership had activity but no visibility. I built a formula-driven dashboard suite in Excel — COUNTIFS/SUMIFS engines tied to year selection — covering lead sources, job outcomes, revenue opportunities, and year-over-year performance across all three brands. Marketing conversations moved from "we've been busy" to "here's what's working, and here's what it's worth."</p>
+        <div class="built">BUILT WITH · Advanced Excel · Formula-driven architecture · Monthly summary + live touch tracking</div>
+      </div>
+      <div class="case">
+        <span class="tag">Automation</span>
+        <h3>Lead-intake automation</h3>
+        <p>Job-intake emails were being logged by hand. I built a Power Automate workflow that parses intake emails into a SharePoint-based log automatically — reducing manual entry and making CRM data consistent enough to report on.</p>
+        <div class="built">BUILT WITH · Power Automate · SharePoint</div>
+      </div>
+      <div class="case">
+        <span class="tag">Analytics</span>
+        <h3>Fire Department Intelligence Dashboard</h3>
+        <p>A standalone dashboard correlating field-outreach touch activity with emergency call volume by fire department — including the data-quality cleanup that made the correlation trustworthy enough to guide relationship-development priorities.</p>
+        <div class="built">BUILT WITH · Excel · Data cleanup & entity matching</div>
+      </div>
+      <div class="case">
+        <span class="tag">Insight</span>
+        <h3>Lost-job analysis → operational fix</h3>
+        <p>Digging into lost-job categories revealed that intake response time — not marketing reach — was the leading driver of lost opportunities. The finding turned into a targeted improvement for the call-center process. Sometimes the best marketing fix isn't a campaign.</p>
+        <div class="built">OUTCOME · Marketing data driving an operations change</div>
+      </div>
+      <div class="case">
+        <span class="tag">Enablement</span>
+        <h3>Sales &amp; marketing operating system</h3>
+        <p>Created the resources that align sales and marketing around one process: an eight-phase sales process, a weekly Level 10 sales meeting framework, a tiered client-development strategy, and repeatable customer review and referral procedures.</p>
+        <div class="built">BUILT WITH · Process design · Training materials · Meeting frameworks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="creative">
+  <div class="wrap">
+    <div class="sec-head"><h2>Creative work</h2><div class="rule"></div></div>
+    <p class="sec-intro">The other half of the job: making three service brands sound like themselves.</p>
+    <div class="creative">
+      <div class="creative-item">
+        <b>Three brands, three voices</b>
+        <p>Ongoing content across social, email, and web for a restoration brand, an emergency-response brand, and a home-performance brand — each with its own audience, tone, and calls to action.</p>
+      </div>
+      <div class="creative-item">
+        <b>Translation as a craft</b>
+        <p>Turning technical services and real customer needs into clear, approachable messages, campaign concepts, and visuals people actually understand.</p>
+      </div>
+      <div class="creative-item">
+        <b>Campaigns from idea to follow-through</b>
+        <p>Leadership ideas and market opportunities turned into executable campaigns — message and creative materials built together with the tracking and follow-up behind them.</p>
+      </div>
+      <div class="creative-item">
+        <b>The agency years: Weber &amp; Denver's Road Home</b>
+        <p>Production coordination and quality assurance at rabble+rouser on work for clients including Weber and Denver's Road Home — national-brand standards and civic-campaign stakes, early in my career.</p>
+      </div>
+      <div class="creative-item">
+        <b>Bespoke Brand Solutions</b>
+        <p>Freelance brand development, creative direction, and practical marketing strategy for small businesses — tailored to each client's personality, audience, and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="toolbox">
+  <div class="wrap">
+    <div class="sec-head"><h2>The toolbox</h2><div class="rule"></div></div>
+    <p class="sec-intro">A marketer who understands what's under the hood of the systems she runs.</p>
+    <div class="toolbox">
+      <div class="mit">
+        <span class="tag">Technical foundation</span>
+        <h3>MIT xPRO — Full Stack Development with MERN · 2023</h3>
+        <p>Full-stack web development training from MIT on the MERN stack — MongoDB, Express, React, and Node.js. It means integrations, APIs, websites, and marketing platforms aren't black boxes — when a system needs configuring, connecting, or fixing, I can work at the level where the problem actually lives.</p>
+      </div>
+      <div class="stack">
+        <span class="tag">Working stack</span>
+        <ul>
+          <li>CRM administration</li>
+          <li>Power Automate</li>
+          <li>SharePoint</li>
+          <li>Power Apps</li>
+          <li>Advanced Excel</li>
+          <li>Marketing automation</li>
+          <li>Email &amp; web marketing</li>
+          <li>Social media</li>
+          <li>Agile &amp; PM foundations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="building">
+  <div class="wrap">
+    <div class="sec-head"><h2>Now building</h2><div class="rule"></div></div>
+    <p class="sec-intro">Side projects where the MERN training gets its reps — real tools for real problems.</p>
+    <div class="cases">
+      <div class="case">
+        <span class="tag">Live project</span>
+        <h3>DonutKnow — dinner, decided</h3>
+        <p>“Donut know what you want? Roll for it.” A restaurant-decision app that ends dinner indecision: pick a mood — from “I Can't Even” to “Wild Dice” — set your filters, and a dice roll picks a well-reviewed spot nearby. Concept, branding, and full-stack build.</p>
+        <div class="built"><a href="https://donutknow.com" target="_blank" rel="noopener">DONUTKNOW.COM</a> · MERN · Google Places API</div>
+      </div>
+      <div class="case">
+        <span class="tag">In development</span>
+        <h3>House Manager Tool</h3>
+        <p>Maintenance schedules and issue tracking for the place you live — an idea born the day a tree fell through my house. Real problems make the best product briefs. A home-inventory element is next on the roadmap.</p>
+        <div class="built">IN PROGRESS · Full-stack build</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="else">
+  <div class="wrap">
+    <div class="sec-head"><h2>Off the resume</h2><div class="rule"></div></div>
+    <p class="sec-intro">A one-page resume is an exercise in leaving things out. Some of what got cut.</p>
+    <div class="creative">
+      <div class="creative-item">
+        <span class="tag">PEAK6 · 2008–2009</span>
+        <b>WeSeed: a startup, from zero</b>
+        <p>Project lead at PEAK6's virtual trading-platform startup — led a team of six building a search-engine database from the ground up, and designed a card game to help new users learn their trading symbols.</p>
+      </div>
+      <div class="creative-item">
+        <span class="tag">PEAK6 · 2009–2010</span>
+        <b>Energie: the in-house creative department</b>
+        <p>Coordinated creative services company-wide for PEAK6, a Chicago trading and financial technology firm — film and photo shoots, set books and auditions, trade shows, university recruiting, and large-scale event production.</p>
+      </div>
+      <div class="creative-item">
+        <span class="tag">PEAK6 · 2010–2012</span>
+        <b>OptionsHouse: operations at a #1 brokerage</b>
+        <p>Operations specialist at PEAK6's online brokerage — rated #1 by Barron's for options traders four years running — writing the standard operating procedures that held a fast-growing platform together and managing the move of 40,000 client files to the Chicago Board of Trade.</p>
+      </div>
+      <div class="creative-item">
+        <span class="tag">Certified</span>
+        <b>Makeup artist</b>
+        <p>Formally trained and certified — color, light, and detail work at the closest possible range. Creative direction you can hold a brush to.</p>
+      </div>
+      <div class="creative-item">
+        <span class="tag">2022–2024</span>
+        <b>The classroom</b>
+        <p>Substitute teaching at my daughter's preschool while re-entering the workforce — coordinating with teachers and parents, running projects and schedules for the toughest stakeholders there are: four-year-olds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><h2>About</h2><div class="rule"></div></div>
+    <div class="about" style="margin-top:36px">
+      <div class="about-story">
+        <p>My agency education came at rabble+rouser, a Denver brand studio — production coordination, quality assurance, and operations, supporting work for clients like Weber and Denver's Road Home. That's where I learned how good creative actually gets made: on schedule, on brief, and checked twice before it ships.</p>
+        <p>Then came seven years of full-time parenting across the UK and Illinois, with freelance creative and marketing projects running through it all. Rebuilding a career after a break teaches you resourcefulness in a way no job ever has.</p>
+        <p>Today I run marketing end-to-end for a three-brand services company — and I'm at my best in scalable growth environments where lifecycle strategy, process clarity, and data-driven decisions beat reactive activity. My favorite compliment from leadership: the bridge between the systems and the people who use them.</p>
+      </div>
+      <div class="also">
+        <span class="tag">Also true</span>
+        <ul>
+          <li>B.A. Geography, University of Denver — with GIS coursework, the original data-driven mapmaking</li>
+          <li>Seven years living between the UK and Illinois — adaptability, field-tested</li>
+          <li>Fluent in translating between marketers, salespeople, and spreadsheets</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Building a marketing push that needs someone to run it?</p>
+    <div class="contact-row">
+      <a href="mailto:ashlingstruve85@gmail.com">Email me</a>
+      <a href="https://www.linkedin.com/in/ashlings" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+    <p class="fine">ASHLING STRUVE · LAKE BLUFF, ILLINOIS · <a href="/portfolio">PORTFOLIO</a> · <a href="/style-guide">STYLE GUIDE</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
