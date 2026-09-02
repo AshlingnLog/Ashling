@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Artifacts and portfolio pieces from Ashling Struve — live projects, brand systems, dashboards, and creative work.">
+<title>Ashling Struve — Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #F4F6F5;
+    --surface: #FDFEFD;
+    --ink: #16303B;
+    --muted: #5E7178;
+    --line: #D8E0DF;
+    --primary: #14555E;
+    --primary-soft: #E3ECEB;
+    --accent: #D98A20;
+    --accent-ink: #9A5F0E;
+    --display: "Fraunces", Georgia, serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "Spline Sans Mono", "SFMono-Regular", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0E1F26; --surface: #142932; --ink: #E9EFEE; --muted: #93A7AC;
+      --line: #24404A; --primary: #6FB4B0; --primary-soft: #1A333D;
+      --accent: #E8A13D; --accent-ink: #EFB868;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0E1F26; --surface: #142932; --ink: #E9EFEE; --muted: #93A7AC;
+    --line: #24404A; --primary: #6FB4B0; --primary-soft: #1A333D;
+    --accent: #E8A13D; --accent-ink: #EFB868;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: var(--body); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--line);
+    position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: .35;
+    mask-image: radial-gradient(ellipse 80% 90% at 85% 10%, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 90% at 85% 10%, black 0%, transparent 65%);
+  }
+  .hero-inner { position: relative; }
+  .kicker {
+    font-family: var(--mono); font-size: 13px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--primary); margin: 0 0 18px;
+  }
+  .kicker a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+  .kicker a:hover, .kicker a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+  h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(40px, 6.5vw, 64px); line-height: 1.05;
+    margin: 0 0 18px; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  h1 .spark { color: var(--accent); }
+  .lede { color: var(--muted); font-size: 18px; max-width: 40em; margin: 0; }
+
+  section { padding: 56px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 8px; }
+  h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(26px, 4vw, 34px); margin: 0; letter-spacing: -0.01em;
+  }
+  .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+  .sec-intro { color: var(--muted); max-width: 42em; margin: 10px 0 36px; }
+
+  .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .case {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 26px 26px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .case.slot {
+    background: transparent;
+    border-style: dashed;
+  }
+  .tag {
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .case h3 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 22px; line-height: 1.25; margin: 0; text-wrap: balance;
+  }
+  .case p { margin: 0; font-size: 15.5px; color: var(--muted); }
+  .built a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+  .built a:hover, .built a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+  .case .built {
+    margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--line);
+    font-family: var(--mono); font-size: 12.5px; color: var(--primary);
+    line-height: 1.7;
+  }
+
+  footer {
+    margin-top: 72px; border-top: 1px solid var(--line);
+    padding: 40px 0 56px;
+  }
+  footer .fine { margin: 0; font-size: 13px; color: var(--muted); font-family: var(--mono); }
+  footer .fine a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+  footer .fine a:hover, footer .fine a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+
+  @media (max-width: 720px) {
+    .cases { grid-template-columns: 1fr; }
+    section { padding: 44px 0 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <p class="kicker"><a href="/">ashling.tech</a> · Portfolio &amp; Artifacts</p>
+    <h1>The proof shelf<span class="spark">.</span></h1>
+    <p class="lede">The case studies tell the story; this is where the actual work lives. Live projects, brand systems, and artifacts from the campaigns and dashboards — added as they're cleared for sharing.</p>
+  </div>
+</header>
+
+<section id="live">
+  <div class="wrap">
+    <div class="sec-head"><h2>Live &amp; built</h2><div class="rule"></div></div>
+    <div class="cases">
+      <div class="case">
+        <span class="tag">Live app</span>
+        <h3>DonutKnow</h3>
+        <p>“Donut know what you want? Roll for it.” Restaurant-decision app — mood-based filters and a dice roll that picks a well-reviewed spot nearby. Concept, branding, and full-stack build.</p>
+        <div class="built"><a href="https://donutknow.com" target="_blank" rel="noopener">DONUTKNOW.COM</a> · MERN · Google Places API</div>
+      </div>
+      <div class="case">
+        <span class="tag">Brand system</span>
+        <h3>Ashling.tech style guide</h3>
+        <p>The design system behind this site — palette, type pairing, layout rules, and voice, documented the way a client brand would be. The site follows the guide; the guide describes the site.</p>
+        <div class="built"><a href="/style-guide">ASHLING.TECH/STYLE-GUIDE</a> · Design tokens · Light + dark themes</div>
+      </div>
+      <div class="case">
+        <span class="tag">In development</span>
+        <h3>House Manager Tool</h3>
+        <p>Maintenance schedules and issue tracking for the place you live — born the day a tree fell through my house. Home-inventory element on the roadmap. Link lands here when it ships.</p>
+        <div class="built">IN PROGRESS · Full-stack build</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="artifacts">
+  <div class="wrap">
+    <div class="sec-head"><h2>Artifacts</h2><div class="rule"></div></div>
+    <p class="sec-intro">Work products from the case studies — being gathered and prepared for sharing. Each slot below fills in as its piece is ready.</p>
+    <div class="cases">
+      <div class="case slot">
+        <span class="tag">Coming soon</span>
+        <h3>Marketing intelligence dashboards</h3>
+        <p>Anonymized views of the multi-brand Excel dashboard suite — lead sources, job outcomes, and year-over-year performance.</p>
+        <div class="built">FORMAT · Screenshots</div>
+      </div>
+      <div class="case slot">
+        <span class="tag">Coming soon</span>
+        <h3>Sales &amp; marketing operating system</h3>
+        <p>The eight-phase sales process infographic and the frameworks that align sales and marketing around one process.</p>
+        <div class="built">FORMAT · Infographic + documents</div>
+      </div>
+      <div class="case slot">
+        <span class="tag">Coming soon</span>
+        <h3>Campaign &amp; creative samples</h3>
+        <p>Selected social, email, and brand-voice work across United Services, 1-800-BoardUp Chicagoland, and Dr. Energy Saver.</p>
+        <div class="built">FORMAT · Images + copy samples</div>
+      </div>
+      <div class="case slot">
+        <span class="tag">Open slot</span>
+        <h3>Your next favorite piece</h3>
+        <p>This shelf is built to grow — new artifacts drop in without redesigning the page.</p>
+        <div class="built">FORMAT · TBD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fine"><a href="/">← BACK TO ASHLING.TECH</a> · ASHLING STRUVE · LAKE BLUFF, ILLINOIS</p>
+  </div>
+</footer>
+
+</body>
+</html>
