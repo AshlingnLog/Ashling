@@ -229,6 +229,35 @@
   .creative-item .tag { display: block; margin-bottom: 6px; }
   .creative-item b { font-family: var(--display); font-weight: 600; font-size: 18px; display: block; margin-bottom: 4px; }
   .creative-item p { margin: 0; font-size: 15px; color: var(--muted); }
+  .creative-context {
+    margin: 30px 0 6px;
+    padding: 22px 24px;
+    background: var(--primary-soft);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 10px 10px 0;
+  }
+  .creative-context h3 {
+    font-family: var(--display);
+    font-size: 23px;
+    font-weight: 600;
+    margin: 6px 0 4px;
+  }
+  .creative-context p { margin: 0; font-size: 15px; color: var(--muted); }
+  .united-work .creative-item:last-child { grid-column: 1 / -1; }
+  .bespoke-feature {
+    margin: 38px 0;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .bespoke-feature h3 {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 8px 0 8px;
+  }
+  .bespoke-feature p { margin: 0; color: var(--muted); max-width: 45em; }
 
   /* ---------- Toolbox ---------- */
   .toolbox { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; align-items: stretch; }
@@ -316,6 +345,7 @@
 
   @media (max-width: 720px) {
     .cases, .creative, .toolbox, .about, .credential { grid-template-columns: 1fr; }
+    .united-work .creative-item:last-child { grid-column: auto; }
     .academy-badge img { width: 150px; }
     .arc { grid-template-columns: 1fr; }
     section { padding: 48px 0 8px; }
@@ -406,9 +436,12 @@
 <section id="creative">
   <div class="wrap">
     <div class="sec-head"><h2>Creative work</h2><div class="rule"></div></div>
-    <p class="sec-intro">The other half of the job: shaping ideas into work people can see, understand, and act on.</p>
-
-    <div class="creative">
+    <p class="sec-intro">The creative side of my work spans two distinct lanes: my three-brand role at United Services an    <div class="creative-context">
+      <span class="tag">Current role · United Services</span>
+      <h3>Creative Marketing Operations across three brands</h3>
+      <p>These are connected parts of my work for United Services, 1-800-BoardUp Chicagoland, and Dr. Energy Saver NE Illinois.</p>
+    </div>
+    <div class="creative united-work">
       <div class="creative-item">
         <b>Three brands, three voices</b>
         <p>Ongoing content across social, email, and web for a restoration brand, an emergency-response brand, and a home-performance brand — each with its own audience, tone, and calls to action.</p>
@@ -421,9 +454,12 @@
         <b>Campaigns from idea to follow-through</b>
         <p>Leadership ideas and market opportunities turned into executable campaigns — message and creative materials built together with the tracking and follow-up behind them.</p>
       </div>
-      <div class="creative-item">
-        <b>Bespoke Brand Solutions</b>
-        <p>Freelance brand development, creative direction, and practical marketing strategy for small businesses — tailored to each client's personality, audience, and goals.</p>
+    </div>
+    <div class="bespoke-feature">
+      <span class="tag">Independent brand project</span>
+      <h3>Bespoke Brand Solutions</h3>
+      <p>Bespoke Brand Solutions was the name of my independent creative project for developing logos, visual identities, and early brand concepts for small businesses.</p>
+    </div>nality, audience, and goals.</p>
       </div>
     </div>
 
