@@ -253,6 +253,27 @@
     border: 1px solid var(--line); border-radius: 999px;
     padding: 5px 12px; color: var(--ink); background: var(--ground);
   }
+  .credential {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 28px;
+  }
+  .credential h3 {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 8px 0 8px;
+  }
+  .credential p { margin: 0; font-size: 15.5px; color: var(--muted); max-width: 39em; }
+  .academy-badge a { display: block; border: 0; border-radius: 8px; }
+  .academy-badge a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .academy-badge img { display: block; width: 180px; max-width: 100%; height: auto; }
 
   /* ---------- About ---------- */
   .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
@@ -294,7 +315,8 @@
   footer .fine a:hover, footer .fine a:focus-visible { border-bottom-color: var(--accent); outline: none; }
 
   @media (max-width: 720px) {
-    .cases, .creative, .toolbox, .about { grid-template-columns: 1fr; }
+    .cases, .creative, .toolbox, .about, .credential { grid-template-columns: 1fr; }
+    .academy-badge img { width: 150px; }
     .arc { grid-template-columns: 1fr; }
     section { padding: 48px 0 8px; }
   }
@@ -472,6 +494,20 @@
           <li>Agile &amp; PM foundations</li>
         </ul>
       </div>
+    </div>
+    <div class="credential">
+      <div>
+        <span class="tag">New credential · HubSpot Academy</span>
+        <h3>HubSpot Revenue Operations Certified</h3>
+        <p>Training focused on aligning people, processes, systems, and data to improve the customer experience and support sustainable revenue growth.</p>
+      </div>
+      <!-- Begin: HubSpot Academy - HubSpot Revenue Operations Certified Badge -->
+      <div class="academy-badge">
+        <a href="https://app-na2.hubspot.com/academy/achievements/73bhz2dj/en/1/ashling-struve/hubspot-revenue-operations-certified" title="View Ashling Struve's HubSpot Revenue Operations certification" target="_blank" rel="noopener">
+          <img src="https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/a815489b249f4c4e9331211d8d591ce7.png" alt="HubSpot Revenue Operations Certified badge earned by Ashling Struve" loading="lazy">
+        </a>
+      </div>
+      <!-- End: HubSpot Academy - HubSpot Revenue Operations Certified Badge -->
     </div>
   </div>
 </section>
